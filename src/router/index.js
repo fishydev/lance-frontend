@@ -1,15 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Homepage from '../views/Homepage'
+import HalamanUtama from '../views/HalamanUtama.vue'
+import ProfilePage from '../views/ProfilePage.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'homepage',
-    component: Homepage
-  }
+    name: 'HalamanUtama',
+    component: HalamanUtama
+  },
+  {
+    path: '/profile',
+    name: 'HalamanUtama',
+    component: ProfilePage
+  },
 ]
 
 const router = new VueRouter({
