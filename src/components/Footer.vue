@@ -5,11 +5,11 @@
         color="blue-grey darken-2">
         <v-col
             class="text-left"
-            cols="1">
+            cols="2">
             <p class="title">LANCE</p>
         </v-col>
         <v-col 
-            cols="1"
+            cols="5"
         >
             <v-list-item>
                 <v-list-item-content>
@@ -35,7 +35,7 @@
             </v-list-item>
         </v-col>
         <v-col
-            cols="2"
+            cols="5"
         >
             <v-list-item>
                 <v-list-item-content>

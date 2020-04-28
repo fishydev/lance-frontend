@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HalamanUtama from '../views/HalamanUtama.vue'
+import Homepage from '../views/Homepage.vue'
 import ProfilePage from '../views/ProfilePage.vue'
 
 Vue.use(VueRouter)
@@ -8,12 +8,12 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'HalamanUtama',
-    component: HalamanUtama
+    name: 'Homepage',
+    component: Homepage
   },
   {
     path: '/profile',
-    name: 'HalamanUtama',
+    name: 'Homepage',
     component: ProfilePage
   },
 ]
