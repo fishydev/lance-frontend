@@ -28,7 +28,7 @@
                         <v-card class="mx-auto" max-width="344" outlined>
                             <v-list-item three-line>
                                 <v-list-item-content>
-                                    <div class="overline mb-4">PROFILE</div>
+                                    <div class="overline mb-4">Tentang Penjual</div>
                                     <v-list-item-subtitle>
                                         <v-row justify="center">
                                             <v-avatar size="100">
@@ -38,6 +38,11 @@
                                                 >
                                                 </v-img>
                                             </v-avatar>
+                                        </v-row>
+                                    </v-list-item-subtitle>
+                                    <v-list-item-subtitle>
+                                        <v-row justify="center">
+                                            <p class="subtitle-1">Penjual A</p>
                                         </v-row>
                                     </v-list-item-subtitle>
                                     <v-list-item-subtitle>
@@ -196,6 +201,68 @@
                                 </v-list-item-content>
                             </v-list-item>
                         </v-card>
+                    </v-col>
+                    <v-col cols="12" md="7">
+                        <v-row>
+                            <p class="title">Jasa yang Dijual</p>
+                        </v-row>
+                        <v-row>
+                            <v-card class="ma-4" max-width="300">
+                                <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px">
+                                    <v-row>
+                                            <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>
+                                            <div class="black--text ml-1 mt-1">4.5</div>
+                                            <v-spacer></v-spacer>
+                                            <div class="black--text mr-4 mt-1">Rp.400.000</div>
+                                        </v-row>
+                                    </v-img>
+                                <v-card-title>
+                                    Lorem Ipsum
+                                </v-card-title>
+                            </v-card>
+                            <v-card class="ma-4" max-width="300">
+                                <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px">
+                                    <v-row>
+                                            <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>
+                                            <div class="black--text ml-1 mt-1">4.5</div>
+                                            <v-spacer></v-spacer>
+                                            <div class="black--text mr-4 mt-1">Rp.400.000</div>
+                                        </v-row>
+                                    </v-img>
+                                <v-card-title>
+                                    Lorem Ipsum
+                                </v-card-title>
+                            </v-card>
+                            <v-card class="ma-4" max-width="300">
+                                <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px">
+                                    <v-row>
+                                            <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>
+                                            <div class="black--text ml-1 mt-1">4.5</div>
+                                            <v-spacer></v-spacer>
+                                            <div class="black--text mr-4 mt-1">Rp.400.000</div>
+                                        </v-row>
+                                    </v-img>
+                                <v-card-title>
+                                    Lorem Ipsum
+                                </v-card-title>
+                            </v-card>
+                            <v-card class="ma-4" max-width="300">
+                                <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px">
+                                    <v-row>
+                                            <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>
+                                            <div class="black--text ml-1 mt-1">4.5</div>
+                                            <v-spacer></v-spacer>
+                                            <div class="black--text mr-4 mt-1">Rp.400.000</div>
+                                        </v-row>
+                                    </v-img>
+                                <v-card-title>
+                                    Lorem Ipsum
+                                </v-card-title>
+                            </v-card>
+                        </v-row>
+                        <v-row class="mt-12">
+                            <p class="title">Review Penjual</p>
+                        </v-row>
                     </v-col>
                 </v-row>
             </v-container>

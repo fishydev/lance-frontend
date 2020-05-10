@@ -42,6 +42,11 @@
                                     </v-list-item-subtitle>
                                     <v-list-item-subtitle>
                                         <v-row justify="center">
+                                            <p class="subtitle-1">User A</p>
+                                        </v-row>
+                                    </v-list-item-subtitle>
+                                    <v-list-item-subtitle>
+                                        <v-row justify="center">
                                             <v-btn>
                                                 Edit Profile
                                             </v-btn>
