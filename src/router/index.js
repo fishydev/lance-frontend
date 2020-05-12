@@ -4,6 +4,7 @@ import Homepage from '../views/Homepage.vue'
 import ProfilePage from '../views/ProfilePage.vue'
 import SellerPage from '../views/SellerPage.vue'
 import HomePageIn from '../views/HomePageIn.vue'
+import AddJob from '../views/AddJob.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/homepage',
     name: 'Homepagein',
     component: HomePageIn
+  },
+  {
+    path: '/addjob',
+    name: 'AddJob',
+    component: AddJob
   },
 ]
 
