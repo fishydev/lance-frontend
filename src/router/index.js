@@ -5,6 +5,7 @@ import ProfilePage from '../views/ProfilePage.vue'
 import SellerPage from '../views/SellerPage.vue'
 import HomePageIn from '../views/HomePageIn.vue'
 import AddJob from '../views/AddJob.vue'
+import UpdateProfile from '../views/UpdateProfile.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/addjob',
     name: 'AddJob',
     component: AddJob
+  },
+  {
+    path: '/updateprofile',
+    name: 'UpdateProfile',
+    component: UpdateProfile
   },
 ]
 
