@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Homepage from '../views/Homepage.vue'
 import ProfilePage from '../views/ProfilePage.vue'
 import SellerPage from '../views/SellerPage.vue'
-import HomePageIn from '../views/HomePageIn.vue'
+import HomepageIn from '../views/HomepageIn.vue'
 import AddJob from '../views/AddJob.vue'
 import UpdateProfile from '../views/UpdateProfile.vue'
 
@@ -17,7 +17,7 @@ const routes = [
   },
   {
     path: '/profile',
-    name: 'Homepage',
+    name: 'ProfilePage',
     component: ProfilePage
   },
   {
@@ -28,7 +28,7 @@ const routes = [
   {
     path: '/homepage',
     name: 'Homepagein',
-    component: HomePageIn
+    component: HomepageIn
   },
   {
     path: '/addjob',
