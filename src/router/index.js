@@ -6,6 +6,8 @@ import SellerPage from '../views/SellerPage.vue'
 import HomepageIn from '../views/HomepageIn.vue'
 import AddJob from '../views/AddJob.vue'
 import UpdateProfile from '../views/UpdateProfile.vue'
+import CategoryPage from '../views/CategoryPage.vue'
+import JobPage from '../views/JobPage.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +41,16 @@ const routes = [
     path: '/updateprofile',
     name: 'UpdateProfile',
     component: UpdateProfile
+  },
+  {
+    path: '/category',
+    name: 'CategoryPage',
+    component: CategoryPage
+  },
+  {
+    path: '/jobpage',
+    name: 'JobPage',
+    component: JobPage
   },
 ]
 
