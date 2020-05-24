@@ -169,7 +169,7 @@ export default {
             }
 
             axios.post('http://localhost:5000/users/register', dataRegister).then((res) => {
-                if (res.data.status == 200) {
+                if (res.status == 200) {
                     localStorage.setItem('token', res.data.token)
 
                     this.$router.push({
@@ -192,7 +192,7 @@ export default {
             }
 
             axios.post('http://localhost:5000/login', dataLogin).then((res) => {
-                if (res.data.status == 200) {
+                if (res.status == 200) {
                     localStorage.setItem('token', res.data.token)
 
                     this.$router.push({
