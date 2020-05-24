@@ -1,6 +1,11 @@
 <template>
     <v-app>
-        <Navbar />
+        <template v-if=checkLogin()>
+            <NavbarUser />
+        </template>
+        <template v-else>
+            <Navbar />
+        </template>
         <v-content>
             <router-view></router-view>
         </v-content>
@@ -10,19 +15,32 @@
 
 <script>
 import Footer from './components/Footer'
-import Navbar from './components/Navbar'
+import axios from 'axios'
 
 export default {
     name: 'App',
 
     components: {
-        Footer, Navbar
+        Footer
     },
 
     data: () => ({
-        overlayRegister: false,
-        overlayLogin: false
+        //
     }),
+
+    methods: {
+        checkLogin() {
+            var token = localStorage.getItem(token)
+
+            axios.get('http://localhost:5000/users/checkLogin', { headers: { 'x-access-token' : token }}).then((res) => {
+                if (res.status == 200) {
+                    return true
+                } else {
+                    return false
+                }
+            })
+        }
+    }
 }
 
 </script>
