@@ -1,5 +1,6 @@
 <template>
     <div class="homepage">
+        <NavbarGuest />
         <div class="px-3" style="background-color:#9E9E9E">
             <v-row class="fill-height" align="center" justify="center">
                 <v-col cols="12" md="1"></v-col>
@@ -65,12 +66,18 @@
 </template>
 
 <script>
+import NavbarGuest from '../components/NavbarGuest'
+
 export default {
     data: () => ({
         name: 'home',
         overlayRegister: false,
         overlayLogin: false,
     }),
+
+    components: {
+        NavbarGuest
+    },
 
     methods: {
         validate () {

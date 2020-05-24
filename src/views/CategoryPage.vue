@@ -1,27 +1,6 @@
 <template>
     <div>
-        <v-toolbar
-            color="grey lighten 2"
-            flat
-            dense
-            >
-                <v-toolbar-title>LANCE</v-toolbar-title>
-                <v-text-field
-                class="ml-4 mt-4"
-                append-outer-icon="mdi-magnify"
-                flat
-                dense
-                >
-                    </v-text-field>
-                    <v-spacer></v-spacer>
-                    <v-btn text large>Category</v-btn>
-                    <v-btn text large>Messages</v-btn>
-                    <v-btn text large>Favorites</v-btn>
-                    <v-btn text large>Orders</v-btn>
-                    <v-btn tile icon>
-                        <v-icon x-large>mdi-account-circle</v-icon>
-                    </v-btn>
-            </v-toolbar>
+        <NavbarUser />
             <v-container class="pt-12 mt-12">
                 <v-row>
                     <v-col cols="6" md="4">
@@ -30,121 +9,13 @@
                                 All Category
                             </v-card-title>
                             <v-divider></v-divider>
-                            <v-row>
+                            <v-row v-for="category in categories" :key="category.name">
                                 <v-btn class="ma-2" rounded color="primary">
-                                    Kategori A
+                                    {{ category.name }}
                                 </v-btn>
                                 <v-spacer></v-spacer>
                                 <v-chip class="ma-2">
-                                    1
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori B
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori C
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori D
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori E
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori F
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori G
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori H
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori I
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori J
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori K
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori L
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
-                                </v-chip>
-                            </v-row>
-                            <v-row>
-                                <v-btn class="ma-2" rounded color="primary">
-                                    Kategori M
-                                </v-btn>
-                                <v-spacer></v-spacer>
-                                <v-chip class="ma-2">
-                                    10
+                                    {{ randNum() }}
                                 </v-chip>
                             </v-row>
                         </v-card>
@@ -174,3 +45,33 @@
             </v-container>
     </div>
 </template>
+
+<script>
+import NavbarUser from '../components/NavbarUser'
+
+export default {
+    components: {
+        NavbarUser
+    },
+
+    data: () => ({
+        categories: [
+            { name: 'Kategori A' },
+            { name: 'Kategori B' },
+            { name: 'Kategori C' },
+            { name: 'Kategori D' },
+            { name: 'Kategori E' },
+            { name: 'Kategori F' },
+            { name: 'Kategori G' },
+            { name: 'Kategori H' },
+            { name: 'Kategori I' }
+        ]
+    }),
+
+    methods: {
+        randNum: () => {
+            return Math.ceil(Math.random()*10)
+        }
+    }
+}
+</script>
