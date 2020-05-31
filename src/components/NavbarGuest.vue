@@ -168,7 +168,7 @@ export default {
                 }
             }
 
-            axios.post('http://localhost:5000/users/register', dataRegister).then((res) => {
+            axios.post('https://lance-be.herokuapp.com/register', dataRegister).then((res) => {
                 if (res.status == 200) {
                     localStorage.setItem('token', res.data.token)
 
@@ -191,7 +191,7 @@ export default {
 
             }
 
-            axios.post('http://localhost:5000/login', dataLogin).then((res) => {
+            axios.post('https://lance-be.herokuapp.com/login', dataLogin).then((res) => {
                 if (res.status == 200) {
                     localStorage.setItem('token', res.data.token)
 
