@@ -1,11 +1,5 @@
 <template>
     <v-app>
-        <template v-if=checkLogin()>
-            <NavbarUser />
-        </template>
-        <template v-else>
-            <Navbar />
-        </template>
         <v-content>
             <router-view></router-view>
         </v-content>

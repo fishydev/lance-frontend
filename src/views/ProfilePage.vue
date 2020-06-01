@@ -29,6 +29,9 @@
                                             <v-btn>
                                                 Edit Profile
                                             </v-btn>
+                                            <v-btn class="mx-4" color="error" @click="logOut()">
+                                                Log Out
+                                            </v-btn>
                                         </v-row>
                                     </v-list-item-subtitle>
                                     <v-container>
@@ -85,13 +88,13 @@
                                                         </p>
                                                     </v-row>
                                                 </v-list-item-title>
-                                                <v-list-item-susbtitle>
+                                                <v-list-item-subtitle>
                                                     <v-row justify="center">
                                                         <p class="title font-weight-regular white--text">
                                                             Daftarkan jasa anda dengan menekan tombol dibawah ini
                                                         </p>
                                                     </v-row>
-                                                </v-list-item-susbtitle>
+                                                </v-list-item-subtitle>
                                                 <v-list-item-subtitle>
                                                     <v-row justify="center">
                                                         <v-btn large>
@@ -399,6 +402,13 @@ export default {
     }),
     components: {
         NavbarUser
+    },
+
+    methods: {
+        logOut () {
+            localStorage.removeItem("token")
+            this.$router.push({ name: 'Homepage' })
+        }
     }
 }
 </script>

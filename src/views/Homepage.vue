@@ -7,29 +7,36 @@
                 <v-col cols="12" md="4">
                     <v-row>
                         <v-col cols="12" md="6">
-                            <p class="headline">Cari Jasa Freelance yang Bisnis Kamu Butuhkan</p>
+                            <p class="headline mx-2 text-center text-md-left">Cari Jasa Freelance yang Bisnis Kamu Butuhkan</p>
                         </v-col>
                     </v-row>
                     <v-row>
-                        <v-col cols="12" md="8">
-                           
-                            <v-text-field background-color="white" outlined flat dense single-line label="Search"></v-text-field>
-                        </v-col>
-                        <v-col cols="12" md="2">
-                            <v-btn>Search</v-btn>
+                        <v-col cols="12" md="11">
+                            <v-text-field
+                                class="mx-2"
+                                background-color="white"
+                                outlined
+                                flat
+                                dense
+                                single-line
+                                append-icon="mdi-magnify"
+                                label="Search"></v-text-field>
                         </v-col>
                     </v-row>
                 </v-col>
                 <v-col class="pa-0" cols="6" md="4">
-                    <v-img src="https://pngimg.com/uploads/thinking_man/thinking_man_PNG11610.png" height="300" contain></v-img>
+                    <v-img
+                        class="d-none d-sm-flex"
+                        src="https://pngimg.com/uploads/thinking_man/thinking_man_PNG11610.png" 
+                        height="300" 
+                        contain></v-img>
                 </v-col>
             </v-row>
         </div>
         <div class="pa-4">
             <v-container>
                 <p class="headline ma-4">Jasa Populer</p>
-                <v-sheet class="mx-auto" elevation="2" max-width="1700">
-                    <v-slide-group show-arrows>
+                    <v-slide-group show-arrows mx-auto>
                     <v-slide-item v-for="n in 12" :key="n">
                         <v-card class="ma-4">
                             <v-img src="https://picsum.photos/seed/picsum/300/200"></v-img>
@@ -37,7 +44,6 @@
                         </v-card>
                     </v-slide-item>
                 </v-slide-group>
-                </v-sheet>
             </v-container>
         </div>
         <div class="py-4 px-8">
@@ -69,6 +75,10 @@
 import NavbarGuest from '../components/NavbarGuest'
 
 export default {
+    mounted () {
+        
+    },
+
     data: () => ({
         name: 'home',
         overlayRegister: false,
