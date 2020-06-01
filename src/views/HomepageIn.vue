@@ -23,10 +23,11 @@
                                         <v-row justify="center">
                                             <p class="subtitle-1">User A</p>
                                         </v-row>
+                                        <v-divider class="ma-2"></v-divider>
                                     </v-list-item-subtitle>
                                     <v-list-item-subtitle>
                                         <v-row justify="center">
-                                            <v-btn>
+                                            <v-btn class="mt-7">
                                                 Tambah Jasa
                                             </v-btn>
                                         </v-row>
