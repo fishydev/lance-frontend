@@ -119,7 +119,7 @@
                                             <v-row>
                                                 <p>Description</p>
                                                 <v-spacer></v-spacer>
-                                                <v-btn text x-small>
+                                                <v-btn text x-small @click="overlayDesc = !overlayDesc">
                                                     Add Description
                                                 </v-btn>
                                                 <v-textarea
@@ -136,13 +136,48 @@
                                                 <v-divider></v-divider>
                                             </v-row>
                                         </v-container>
+                                        <!-- Overlay Desc -->
+                                        <v-overlay :value="overlayDesc">
+                                            <v-card class="mx-auto" max-width="1000" outlined light>
+                                                <v-toolbar dense flat>
+                                                    <v-toolbar-title>Add Description</v-toolbar-title>
+                                                    <v-spacer></v-spacer>
+                                                    <v-btn
+                                                        text
+                                                        @click="overlayDesc = !overlayDesc"
+                                                        :ripple="false"
+                                                    >
+                                                        <v-icon right>mdi-close</v-icon>
+                                                    </v-btn>
+                                                </v-toolbar>
+                                                <v-divider></v-divider>
+                                                <v-card-text class="pb-0">
+                                                    <v-form>
+                                                        <v-textarea
+                                                            v-model="bio"
+                                                            auto-grow
+                                                            outlined
+                                                            label="Add Description"
+                                                            rows="4"
+                                                        ></v-textarea>
+                                                    </v-form>
+                                                </v-card-text>
+                                                <v-card-action>
+                                                    <v-row justify="center">
+                                                        <v-btn color="primary" class="ma-2">
+                                                            Add Description
+                                                        </v-btn>
+                                                    </v-row>
+                                                </v-card-action>
+                                            </v-card>
+                                        </v-overlay>
                                     </v-list-item-subtitle>
                                     <v-list-item-subtitle>
                                         <v-container>
                                             <v-row>
                                                 <p>Languages</p>
                                                 <v-spacer></v-spacer>
-                                                <v-btn text x-small>
+                                                <v-btn text x-small @click="overlayLang = !overlayLang">
                                                     Add New
                                                 </v-btn>
                                                 <v-textarea
@@ -159,13 +194,40 @@
                                                 <v-divider></v-divider>
                                             </v-row>
                                         </v-container>
+                                        <!-- Overlay Lang -->
+                                        <v-overlay :value="overlayLang">
+                                            <v-card class="mx-5" outlined light>
+                                                <v-toolbar dense flat>
+                                                    <v-toolbar-title>Add languages</v-toolbar-title>
+                                                    <v-spacer></v-spacer>
+                                                    <v-btn 
+                                                        text 
+                                                        @click="overlayLang = !overlayLang" 
+                                                        :ripple="false"
+                                                    >
+                                                        <v-icon right>mdi-close</v-icon>
+                                                    </v-btn>
+                                                </v-toolbar>
+                                                <v-divider></v-divider>
+                                                <v-card-text class="pb-0">
+                                                    <v-form>
+                                                        <v-text-field label="Add Languages" outlined></v-text-field>
+                                                    </v-form>
+                                                </v-card-text>
+                                                <v-card-action>
+                                                    <v-row justify="center">
+                                                        <v-btn class="ma-2" color="primary">Add Languages</v-btn>
+                                                    </v-row>
+                                                </v-card-action>
+                                            </v-card>
+                                        </v-overlay>
                                     </v-list-item-subtitle>
                                     <v-list-item-subtitle>
                                         <v-container>
                                             <v-row>
                                                 <p>Skill</p>
                                                 <v-spacer></v-spacer>
-                                                <v-btn text x-small>
+                                                <v-btn text x-small @click="overlaySkill = !overlaySkill">
                                                     Add New
                                                 </v-btn>
                                             </v-row>
@@ -184,13 +246,40 @@
                                                 <v-divider></v-divider>
                                             </v-row>
                                         </v-container>
+                                        <!-- Overlay Skill -->
+                                        <v-overlay :value="overlaySkill">
+                                            <v-card class="mx-5" otlined light>
+                                                <v-toolbar dense flat>
+                                                    <v-toolbar-title>Add Skill</v-toolbar-title>
+                                                    <v-spacer></v-spacer>
+                                                    <v-btn
+                                                        text 
+                                                        @click="overlaySkill = !overlaySkill"
+                                                        :ripple="false"
+                                                    >
+                                                        <v-icon right>mdi-close</v-icon>
+                                                    </v-btn>
+                                                </v-toolbar>
+                                                <v-divider></v-divider>
+                                                <v-card-text class="pb-0">
+                                                    <v-form>
+                                                        <v-text-field label="Add Skill" outlined></v-text-field>
+                                                    </v-form>
+                                                </v-card-text>
+                                                <v-card-action>
+                                                    <v-row justify="center">
+                                                        <v-btn class="ma-2" color="primary">Add Skill</v-btn>
+                                                    </v-row>
+                                                </v-card-action>
+                                            </v-card>
+                                        </v-overlay>
                                     </v-list-item-subtitle>
                                     <v-list-item-subtitle>
                                         <v-container>
                                             <v-row>
                                                 <p>Education</p>
                                                 <v-spacer></v-spacer>
-                                                <v-btn text x-small>
+                                                <v-btn text x-small @click="overlayEdu = !overlayEdu">
                                                     Add New
                                                 </v-btn>
                                                 <v-textarea
@@ -207,19 +296,47 @@
                                                 <v-divider></v-divider>
                                             </v-row>
                                         </v-container>
+                                        <!-- Overlay Edu -->
+                                        <v-overlay :value="overlayEdu">
+                                            <v-card class="mx-5" outlined light>
+                                                <v-toolbar dense flat>
+                                                    <v-toolbar-title>Add Education</v-toolbar-title>
+                                                    <v-spacer></v-spacer>
+                                                    <v-btn
+                                                        text
+                                                        @click="overlayEdu = !overlayEdu"
+                                                        :ripple="false"
+                                                    >
+                                                        <v-icon right>mdi-close</v-icon>
+                                                    </v-btn>
+                                                </v-toolbar>
+                                                <v-divider></v-divider>
+                                                <v-card-text class="pb-0">
+                                                    <v-form>
+                                                        <v-text-field label="Add Education" outlined></v-text-field>
+                                                        <v-text-field label="Add Year" outlined></v-text-field>
+                                                    </v-form>
+                                                </v-card-text>
+                                                <v-card-action>
+                                                    <v-row justify="center">
+                                                        <v-btn class="ma-2" color="primary">Add Education</v-btn>
+                                                    </v-row>
+                                                </v-card-action>
+                                            </v-card>
+                                        </v-overlay>
                                     </v-list-item-subtitle>
                                     <v-list-item-subtitle>
                                         <v-container>
                                             <v-row>
-                                                <p>Sertification</p>
+                                                <p>Certification</p>
                                                 <v-spacer></v-spacer>
-                                                <v-btn text x-small>
+                                                <v-btn text x-small @click="overlayCert = !overlayCert">
                                                     Add New
                                                 </v-btn>
                                                 <v-textarea
                                                     name="inputSertification"
                                                     value=""
-                                                    label="Sertification"
+                                                    label="Certification"
                                                     filled
                                                     auto-grow
                                                     disabled
@@ -230,6 +347,35 @@
                                                 <v-divider></v-divider>
                                             </v-row>
                                         </v-container>
+                                        <!-- Overlay Cert -->
+                                        <v-overlay :value="overlayCert">
+                                            <v-card class="mx-5" outlined light>
+                                                <v-toolbar dense flat>
+                                                    <v-toolbar-title>Add Certification</v-toolbar-title>
+                                                    <v-spacer></v-spacer>
+                                                    <v-btn
+                                                        text
+                                                        @click="overlayCert = !overlayCert"
+                                                        :ripple="false"
+                                                    >
+                                                        <v-icon right>mdi-close</v-icon>
+                                                    </v-btn>
+                                                </v-toolbar>
+                                                <v-divider></v-divider>
+                                                <v-card-text class="pb-0">
+                                                    <v-form>
+                                                        <v-text-field label="Add Certification Name" outlined></v-text-field>
+                                                        <v-text-field label="Add Year" outlined></v-text-field>
+                                                        <v-text-field label="Add Credential URL" outlined=""></v-text-field>
+                                                    </v-form>
+                                                </v-card-text>
+                                                <v-card-action>
+                                                    <v-row justify="center">
+                                                        <v-btn class="ma-2" color="primary">Add Certification</v-btn>
+                                                    </v-row>
+                                                </v-card-action>
+                                            </v-card>
+                                        </v-overlay>
                                     </v-list-item-subtitle>
                                 </v-list-item-content>
                             </v-list-item>
@@ -244,6 +390,13 @@
 import NavbarUser from '../components/NavbarUser'
 
 export default {
+    data:() => ({
+        overlayDesc:false,
+        overlayLang:false,
+        overlaySkill:false,
+        overlayEdu:false,
+        overlayCert:false,
+    }),
     components: {
         NavbarUser
     }
