@@ -127,7 +127,7 @@
                                                 </v-btn>
                                                 <v-textarea
                                                     name="inputDescription"
-                                                    value="Isi deskripsi anda untuk menarik minat pelanggan"
+                                                    value=""
                                                     label="Description"
                                                     filled
                                                     auto-grow

@@ -37,13 +37,13 @@
             <v-container>
                 <p class="headline ma-4">Jasa Populer</p>
                     <v-slide-group show-arrows mx-auto>
-                    <v-slide-item v-for="n in 12" :key="n">
-                        <v-card class="ma-4">
-                            <v-img src="https://picsum.photos/seed/picsum/300/200"></v-img>
-                            <v-card-subtitle>Lorem Ipsum</v-card-subtitle>
-                        </v-card>
-                    </v-slide-item>
-                </v-slide-group>
+                        <v-slide-item v-for="n in 12" :key="n">
+                            <v-card class="ma-4">
+                                <v-img src="https://picsum.photos/seed/picsum/300/200"></v-img>
+                                <v-card-subtitle>Lorem Ipsum</v-card-subtitle>
+                            </v-card>
+                        </v-slide-item>
+                    </v-slide-group>
             </v-container>
         </div>
         <div class="py-4 px-8">
