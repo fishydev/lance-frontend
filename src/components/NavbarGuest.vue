@@ -194,6 +194,8 @@ export default {
             axios.post('https://lance-be.herokuapp.com/login', dataLogin).then((res) => {
                 if (res.status == 200) {
                     localStorage.setItem('token', res.data.token)
+                    localStorage.setItem('isAuth', true)
+                    localStorage.setItem('email', this.modelLogin.email)
 
                     this.$router.push({
                         name: 'Homepagein'
