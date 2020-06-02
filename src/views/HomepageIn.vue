@@ -72,7 +72,7 @@
                 <v-row class="ml-sm-4 ml-md-12">
                     <v-slide-group  show-arrows mx-auto>
                         <v-slide-item v-for="n in 9" :key="n">
-                            <v-card class="ma-4">
+                            <v-card class="ma-4" href="/jobpage">
                                 <v-img src="https://picsum.photos/seed/picsum/300/200">
                                     <v-row>
                                         <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>
