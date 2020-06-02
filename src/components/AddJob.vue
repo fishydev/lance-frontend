@@ -14,43 +14,41 @@
                 <v-card-title>Add a Job</v-card-title>
                 <p>Beri judul jasa</p>
                 <v-text-field
-                    v-model="jobTitle"
+                    v-model="modelJob.title"
                     label="Judul"
                     filled>
                 </v-text-field>
                 <p>Deskripsikan jasamu sejelas mungkin.</p>
                 <v-text-field
-                    v-model="jobDesc"
+                    v-model="modelJob.desc"
                     label="Deskripsi Jasa"
                     placeholder="Isi deskripsi jasamu"
                     filled>                    
                 </v-text-field>
                 <p>Pilih kategori jasa</p>
                 <v-select
-                    v-model="jobCat"
+                    v-model="modelJob.category"
                     :items="categories"
                     filled
                     label="Kategori Jasa">
                 </v-select>
                 <p>Masukkan harga</p>
                 <v-text-field
-                    v-model="jobFee"
+                    v-model="modelJob.fee"
                     label="Harga Jasa"
                     placeholder="Masukkan harga jasamu"
                     filled>
                 </v-text-field>
-                <v-card-action>
-                    <v-row>
-                        <v-spacer></v-spacer>
-                        <v-btn class="mx-4" color="yellow" @click="addJobDialog = false">Close</v-btn>
-                        <v-btn
-                            class="mr-4"
-                            color="blue"
-                            @click="addJobDialog = false"
-                            type="submit"
-                            form="addjob_form">Submit</v-btn>
-                    </v-row>
-                </v-card-action>
+                <v-row>
+                    <v-spacer></v-spacer>
+                    <v-btn class="mx-4" color="yellow" @click="addJobDialog = false">Close</v-btn>
+                    <v-btn
+                        class="mr-4"
+                        color="blue"
+                        @click="addJobDialog = false"
+                        type="submit"
+                        form="addjob_form">Submit</v-btn>
+                </v-row>
             </v-form>
         </v-card>
     </v-dialog>
@@ -64,26 +62,26 @@ export default {
     data: () => ({
         addJobDialog: false,
         categories: [
-            { name: 'Kategori A' },
-            { name: 'Kategori B' },
-            { name: 'Kategori C' },
-            { name: 'Kategori D' },
-            { name: 'Kategori E' },
-            { name: 'Kategori F' },
-            { name: 'Kategori G' },
-            { name: 'Kategori H' },
-            { name: 'Kategori I' }
+            'Kategori A',
+            'Kategori B',
+            'Kategori C',
+            'Kategori D',
+            'Kategori E',
+            'Kategori F',
+            'Kategori G',
+            'Kategori H',
+            'Kategori I'
         ],
 
         modelJob: {
             title: '',
             desc: '',
             category: '',
-            email: '',
+            email: localStorage.getItem('email'),
             fee: ''
         },
 
-        postJob: {
+        postJobEvent: {
             success: false,
             msg: ''
         }
@@ -96,15 +94,15 @@ export default {
                     title: this.modelJob.title,
                     desc: this.modelJob.desc,
                     category: this.modelJob.category,
-                    email: this.modelJob.email,
-                    fee: this.modelJob.fee
+                    freelancer: this.modelJob.email,
+                    fee: this.modelJob.fee,
                 }
 
                 axios.post('https://lance-be.herokuapp.com/jobs/post', dataJob).then((res) => {
                     if (res.status == 200) {
                         this.addJobDialog = false
                     } else {
-                        this.postJob.msg = res.msg
+                        this.postJobEvent.msg = res.msg
                     }
                 })
             }
