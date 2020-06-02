@@ -3,7 +3,7 @@
             <NavbarUser />
             <v-container>
                 <v-row>
-                    <v-col cols="6" md="4">
+                    <v-col cols="6" md="4" sm="6">
                         <v-card class="mx-auto" max-width="344" outlined>
                             <v-list-item three-line>
                                 <v-list-item-content>
@@ -67,7 +67,7 @@
                             </v-list-item>
                         </v-card>
                     </v-col>
-                    <v-col cols="12" md="7">
+                    <v-col cols="12" md="7" sm="12">
                         <v-card
                             class="pa-2"
                             outlined
@@ -97,9 +97,7 @@
                                                 </v-list-item-subtitle>
                                                 <v-list-item-subtitle>
                                                     <v-row justify="center">
-                                                        <v-btn large>
-                                                            Mulai
-                                                        </v-btn>
+                                                        <AddJobDialog />
                                                     </v-row>
                                                 </v-list-item-subtitle>
                                             </v-list-item-content>
@@ -113,7 +111,7 @@
             </v-container>
             <v-container>
                 <v-row>
-                    <v-col cols="6" md="4">
+                    <v-col cols="6" md="4" sm="6">
                         <v-card class="mx-auto" max-width="344" outlined>
                             <v-list-item>
                                 <v-list-item-content>
@@ -157,7 +155,6 @@
                                                 <v-card-text class="pb-0">
                                                     <v-form>
                                                         <v-textarea
-                                                            v-model="bio"
                                                             auto-grow
                                                             outlined
                                                             label="Add Description"
@@ -391,6 +388,7 @@
 
 <script>
 import NavbarUser from '../components/NavbarUser'
+import AddJobDialog from '../components/AddJob'
 
 export default {
     data:() => ({
@@ -401,12 +399,14 @@ export default {
         overlayCert:false,
     }),
     components: {
-        NavbarUser
+        NavbarUser, AddJobDialog
     },
 
     methods: {
         logOut () {
             localStorage.removeItem("token")
+            localStorage.removeItem("email")
+            localStorage.removeItem("isAuth")
             this.$router.push({ name: 'Homepage' })
         }
     }
