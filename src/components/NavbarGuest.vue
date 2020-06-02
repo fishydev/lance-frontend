@@ -37,7 +37,7 @@
                             dense
                             :type="loginMsg.success ? 'info' : 'error'"
                             :value="true"
-                            v-if="showAlert">
+                            v-if="showAlertLogin">
                             {{ loginMsg.message }}
                         </v-alert>
                         <v-text-field
@@ -87,8 +87,8 @@
                             dense
                             :type="registerMsg.success ? 'info' : 'error'"
                             :value="true"
-                            v-if="showAlert">
-                            {{ loginMsg.message }}
+                            v-if="showAlertRegister">
+                            {{ registerMsg.message }}
                         </v-alert>
                         <v-text-field
                             v-model="modelRegister.email"
@@ -105,6 +105,7 @@
                             :type="show_password ? 'text' : 'password'"
                             @click:append="show_password = !show_password"></v-text-field>
                         <v-btn
+                            color="blue"
                             block
                             depressed
                             type="submit"
@@ -168,7 +169,7 @@ export default {
                 }
             }
 
-            axios.post('https://lance-be.herokuapp.com/register', dataRegister).then((res) => {
+            axios.post('https://lance-be.herokuapp.com/users/register', dataRegister).then((res) => {
                 if (res.status == 200) {
                     localStorage.setItem('token', res.data.token)
 
@@ -177,7 +178,7 @@ export default {
                     })
                 } else {
                     this.registerMsg.message = res.data.message
-                    this.showAlert = true
+                    this.showAlertRegister = true
                 }
             })
         },
@@ -202,7 +203,7 @@ export default {
                     })
                 } else {
                     this.loginMsg.message = res.data.message
-                    this.showAlert = true
+                    this.showAlertLogin = true
                 }
             })
         }
