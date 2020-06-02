@@ -26,7 +26,7 @@
                             <p class="blue-grey--text font-weight-bold">Category A</p>
                         </v-row>
                         <v-row>
-                            <v-card class="ma-4" max-width="300">
+                            <v-card class="ma-4" max-width="300" href="/jobpage">
                                 <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px">
                                     <v-row>
                                             <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>

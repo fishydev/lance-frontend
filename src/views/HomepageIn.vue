@@ -1,9 +1,9 @@
 <template>
     <div>
         <NavbarUser />
-            <v-container>
-                <v-row>
-                    <v-col cols="6" md="4">
+            <v-container class="pt-8">
+                <v-row no-gutters>
+                    <v-col cols="12" :md="5" :sm="12">
                         <v-card class="mx-auto" max-width="344" outlined>
                             <v-list-item three-line>
                                 <v-list-item-content>
@@ -38,7 +38,7 @@
                             </v-list-item>
                         </v-card>
                     </v-col>
-                    <v-col cols="12" md="7">
+                    <v-col cols="12" :md="7" :sm="12">
                         <p class="title font-weight-bold">News</p>
                         <v-carousel
                             cycle
@@ -66,11 +66,11 @@
                         </v-carousel>
                     </v-col>
                 </v-row>
-                <v-row class="ml-12">
-                    <p class="ml-12 mt-12 pl-4 title font-weight-bold">Jasa Populer</p>
+                <v-row class="ml-sm-4 ml-md-12">
+                    <p class="mt-12 pl-4 title font-weight-bold">Jasa Populer</p>
                 </v-row>
-                <v-row>
-                    <v-slide-group class="ml-9 md-9" show-arrows mx-auto>
+                <v-row class="ml-sm-4 ml-md-12">
+                    <v-slide-group  show-arrows mx-auto>
                         <v-slide-item v-for="n in 9" :key="n">
                             <v-card class="ma-4">
                                 <v-img src="https://picsum.photos/seed/picsum/300/200">
@@ -86,13 +86,13 @@
                         </v-slide-item>
                     </v-slide-group>
                 </v-row>
-                <v-row class="ml-12">
-                    <p class="ml-12 mt-12 pl-4 title font-weight-bold">Jasa Berdasarkan Preferensimu</p>
+                <v-row class="ml-sm-4 ml-md-12">
+                    <p class="mt-12 pl-4 title font-weight-bold">Jasa Berdasarkan Preferensimu</p>
                 </v-row>
-                <v-row>
-                    <v-slide-group class="ml-9 md-9" show-arrows mx-auto>
+                <v-row class="ml-sm-4 ml-md-12">
+                    <v-slide-group show-arrows mx-auto>
                         <v-slide-item v-for="n in 9" :key="n">
-                            <v-card class="ma-4">
+                            <v-card class="ma-4" href="/jobpage">
                                 <v-img src="https://picsum.photos/seed/picsum/300/200">
                                     <v-row>
                                         <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>

@@ -7,7 +7,7 @@
             <v-btn icon class="mr-4" @click.stop="drawerNav = !drawerNav">
                 <v-icon>mdi-menu</v-icon>
             </v-btn>
-            <v-toolbar-title @click="toHomepage()">LANCE</v-toolbar-title>
+            <v-toolbar-title class="d-none d-sm-flex px-0 mx-0" @click="toHomepage()">LANCE</v-toolbar-title>
             <v-text-field
                 class="ml-12 mt-6"
                 prepend-inner-icon="mdi-magnify"
@@ -16,12 +16,12 @@
                 background-color="white"
                 color="grey"
                 dense></v-text-field>
-            <v-btn class="ml-2">Search</v-btn>
+            <v-btn class="ml-2 d-none d-sm-flex">Search</v-btn>
             <v-spacer></v-spacer>
-            <v-btn text large href="/category">Category</v-btn>
-            <v-btn text large>Messages</v-btn>
-            <v-btn text large>Favorites</v-btn>
-            <v-btn text large>Orders</v-btn>
+            <v-btn class="d-none d-sm-flex" text large href="/category">Category</v-btn>
+            <v-btn class="d-none d-sm-flex" text large>Messages</v-btn>
+            <v-btn class="d-none d-sm-flex" text large>Favorites</v-btn>
+            <v-btn class="d-none d-sm-flex" text large>Orders</v-btn>
             <v-btn tile icon href="/profile">
                 <v-icon x-large>mdi-account-circle</v-icon>
             </v-btn>
