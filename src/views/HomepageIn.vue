@@ -27,9 +27,7 @@
                                     </v-list-item-subtitle>
                                     <v-list-item-subtitle>
                                         <v-row justify="center">
-                                            <v-btn class="mt-7">
-                                                Tambah Jasa
-                                            </v-btn>
+                                            <AddJobDialog />
                                         </v-row>
                                     </v-list-item-subtitle>
                                     <v-container>
@@ -72,45 +70,41 @@
                     <p class="ml-12 mt-12 pl-4 title font-weight-bold">Jasa Populer</p>
                 </v-row>
                 <v-row>
-                    <v-sheet class="mx-auto" elevation="0" max-width="1700">
-                        <v-slide-group class="ml-9 md-9" show-arrows mx-auto>
-                            <v-slide-item v-for="n in 9" :key="n">
-                                <v-card class="ma-4">
-                                    <v-img src="https://picsum.photos/seed/picsum/300/200">
-                                        <v-row>
-                                            <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>
-                                            <div class="black--text ml-1 mt-1">4.5</div>
-                                            <v-spacer></v-spacer>
-                                            <div class="black--text mr-4 mt-1">Rp.400.000</div>
-                                        </v-row>
-                                    </v-img>
-                                    <v-card-subtitle>Lorem Ipsum</v-card-subtitle>
-                                </v-card>
-                            </v-slide-item>
-                        </v-slide-group>
-                    </v-sheet>
+                    <v-slide-group class="ml-9 md-9" show-arrows mx-auto>
+                        <v-slide-item v-for="n in 9" :key="n">
+                            <v-card class="ma-4">
+                                <v-img src="https://picsum.photos/seed/picsum/300/200">
+                                    <v-row>
+                                        <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>
+                                        <div class="black--text ml-1 mt-1">4.5</div>
+                                        <v-spacer></v-spacer>
+                                        <div class="black--text mr-4 mt-1">Rp.400.000</div>
+                                    </v-row>
+                                </v-img>
+                                <v-card-subtitle>Lorem Ipsum</v-card-subtitle>
+                            </v-card>
+                        </v-slide-item>
+                    </v-slide-group>
                 </v-row>
                 <v-row class="ml-12">
                     <p class="ml-12 mt-12 pl-4 title font-weight-bold">Jasa Berdasarkan Preferensimu</p>
                 </v-row>
                 <v-row>
-                    <v-sheet class="mx-auto" elevation="0" max-width="1700">
-                        <v-slide-group class="ml-9 md-9" show-arrows mx-auto>
-                            <v-slide-item v-for="n in 9" :key="n">
-                                <v-card class="ma-4">
-                                    <v-img src="https://picsum.photos/seed/picsum/300/200">
-                                        <v-row>
-                                            <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>
-                                            <div class="black--text ml-1 mt-1">4.5</div>
-                                            <v-spacer></v-spacer>
-                                            <div class="black--text mr-4 mt-1">Rp.400.000</div>
-                                        </v-row>
-                                    </v-img>
-                                    <v-card-subtitle>Lorem Ipsum</v-card-subtitle>
-                                </v-card>
-                            </v-slide-item>
-                        </v-slide-group>
-                    </v-sheet>
+                    <v-slide-group class="ml-9 md-9" show-arrows mx-auto>
+                        <v-slide-item v-for="n in 9" :key="n">
+                            <v-card class="ma-4">
+                                <v-img src="https://picsum.photos/seed/picsum/300/200">
+                                    <v-row>
+                                        <v-icon class="ml-4 mt-1" color="warning">mdi-star</v-icon>
+                                        <div class="black--text ml-1 mt-1">4.5</div>
+                                        <v-spacer></v-spacer>
+                                        <div class="black--text mr-4 mt-1">Rp.400.000</div>
+                                    </v-row>
+                                </v-img>
+                                <v-card-subtitle>Lorem Ipsum</v-card-subtitle>
+                            </v-card>
+                        </v-slide-item>
+                    </v-slide-group>
                 </v-row>
             </v-container>
     </div>
@@ -118,10 +112,11 @@
 
 <script>
 import NavbarUser from '../components/NavbarUser'
+import AddJobDialog from '../components/AddJob'
 
   export default {
     components : {
-        NavbarUser
+        NavbarUser, AddJobDialog
     },
 
     data () {
