@@ -9,7 +9,8 @@
             <v-form
                 id="addjob_form"
                 ref="form_addjob"
-                class="px-4">
+                class="px-4"
+                @submit.prevent="postJob">
                 <v-card-title>Add a Job</v-card-title>
                 <p>Beri judul jasa</p>
                 <v-text-field
@@ -42,7 +43,12 @@
                     <v-row>
                         <v-spacer></v-spacer>
                         <v-btn class="mx-4" color="yellow" @click="addJobDialog = false">Close</v-btn>
-                        <v-btn class="mr-4" color="blue" @click="addJobDialog = false">Submit</v-btn>
+                        <v-btn
+                            class="mr-4"
+                            color="blue"
+                            @click="addJobDialog = false"
+                            type="submit"
+                            form="addjob_form">Submit</v-btn>
                     </v-row>
                 </v-card-action>
             </v-form>
@@ -51,6 +57,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'AddJobDialog',
     data: () => ({
@@ -65,7 +73,42 @@ export default {
             { name: 'Kategori G' },
             { name: 'Kategori H' },
             { name: 'Kategori I' }
-        ]
-    })
+        ],
+
+        modelJob: {
+            title: '',
+            desc: '',
+            category: '',
+            email: '',
+            fee: ''
+        },
+
+        postJob: {
+            success: false,
+            msg: ''
+        }
+    }),
+
+    methods: {
+        postJob () {
+            if (this.$refs.form_addjob.validate()) {
+                var dataJob = {
+                    title: this.modelJob.title,
+                    desc: this.modelJob.desc,
+                    category: this.modelJob.category,
+                    email: this.modelJob.email,
+                    fee: this.modelJob.fee
+                }
+
+                axios.post('https://lance-be.herokuapp.com/jobs/post', dataJob).then((res) => {
+                    if (res.status == 200) {
+                        this.addJobDialog = false
+                    } else {
+                        this.postJob.msg = res.msg
+                    }
+                })
+            }
+        }
+    }
 }
 </script>
