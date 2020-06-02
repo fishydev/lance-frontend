@@ -4,18 +4,18 @@
             color="grey lighten 2"
             flat
             dense>
-            <v-btn class="mr-4" @click.stop="drawerNav = !drawerNav">
+            <v-btn icon class="mr-4" @click.stop="drawerNav = !drawerNav">
                 <v-icon>mdi-menu</v-icon>
             </v-btn>
-            <v-toolbar-title>LANCE</v-toolbar-title>
+            <v-toolbar-title @click="toHomepage()">LANCE</v-toolbar-title>
             <v-text-field
-            class="ml-12 mt-6"
-            prepend-inner-icon="mdi-magnify"
-            flat
-            outlined
-            background-color="white"
-            color="grey"
-            dense></v-text-field>
+                class="ml-12 mt-6"
+                prepend-inner-icon="mdi-magnify"
+                flat
+                outlined
+                background-color="white"
+                color="grey"
+                dense></v-text-field>
             <v-btn class="ml-2">Search</v-btn>
             <v-spacer></v-spacer>
             <v-btn text large href="/category">Category</v-btn>
@@ -72,14 +72,21 @@
                 <v-list-item
                     v-for="item in items"
                     :key="item.title"
-                    link
-                >
-                <v-list-item-icon>
-                    <v-icon>{{ item.icon }}</v-icon>
-                </v-list-item-icon>
-                <v-list-item-content>
-                    <v-list-item-title>{{ item.title }}</v-list-item-title>
-                </v-list-item-content>
+                    @click="onClick(item.url)">
+                    <v-list-item-icon>
+                        <v-icon>{{ item.icon }}</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                        <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item @click="logOut()">
+                    <v-list-item-icon>
+                        <v-icon>mdi-logout</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                        <v-list-item-title>Logout</v-list-item-title>
+                    </v-list-item-content>
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
@@ -92,13 +99,48 @@ export default {
        return {
            drawerNav: null,
            items: [
-               {title: 'Kategori', icon: 'mdi-apps'},
-               {title: 'Messages', icon: 'mdi-message'},
-               {title: 'Favorites', icon: 'mdi-star'},
-               {title: 'Order', icon: 'mdi-cart'},
-               {title: 'logout', icon: 'mdi-logout'}
+                {
+                    title: 'Kategori',
+                    icon: 'mdi-apps',
+                    event: 'category'
+                },
+                {
+                    title: 'Messages',
+                    icon: 'mdi-message',
+                    event: 'homepage'
+                },
+                {
+                    title: 'Favorites',
+                    icon: 'mdi-star',
+                    event: 'homepage'
+                },
+                {
+                    title: 'Order',
+                    icon: 'mdi-cart',
+                    event: 'homepage'
+                }
            ]
        }
    },
+    methods: {
+        toHomepage () {
+            this.$router.push({
+                name: 'Homepagein'
+            })
+        },
+
+        onClick (url) {
+            this.$router.push({
+                name: url
+            })
+        },
+
+        logOut () {
+            localStorage.removeItem("token")
+            localStorage.removeItem("email")
+            localStorage.removeItem("isAuth")
+            this.$router.push({ name: 'Homepage' })
+        }
+    }
 }
 </script>
